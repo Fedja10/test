@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <a href="#">
+                Кредитные карты 
+            </a>
+        </div>
+        <div id='checked'>
+            <a href="#">
+                Вклады
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                Дебетовые карты
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                Страхование
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                Друзья
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                Интернет-банк
+            </a>
+        </div>
+    </header>
+
+
+    <div id='main'>
+        <div id='crumbs'>
+            <p>
+                <span class='bread'>
+                    <a href="#">
+                        Главная
+                    </a>
+                </span>
+                 - 
+                <span class='bread'>
+                    <a href="#">
+                        Вклады
+                    </a>
+                </span>
+                 - 
+                <span class='bread last'>
+                    <a href="#">
+                        Калькулятор
+                    </a>
+                </span>
+            </p>
+        </div>
+        <form action="calc.php" method="post">
+            <div id='calculator'>
+                
+                    <div>
+                        <p>
+                            Калькулятор
+                        </p>
+                    </div>
+                    <div>
+                        <span>
+                            Дата оформления вклада
+                        </span>
+                        <input type="text" id="datepicker">     
+                    </div>
+                    <div>
+                        <span>
+                            Сумма вклада
+                        </span>
+                        <input type="number" name="depositAmount" id="depositAmount"
+                        placeholder="10 000" class="input" min="1000" max="3000000">
+                        <!-- Ползунок1 -->
+                        <div class="slider" id="firstSlider">
+                            <a class="ui-slider-handle" href="#">
+                                <div id="slider-result1">1000 руб.</div>
+                            </a>
+                            <input id="znch" name="znch" type="hidden" />
+                        </div>
+                        <!-- Ползунок1 -->
+                    </div>
+                    <div>
+                        <span>
+                            Срок вклада
+                        </span>
+                        <select name="depositTerm" id="depositTerm">
+                            <option value="1">1 год</option>
+                            <option value="2">2 года</option>
+                            <option value="3">3 года</option>
+                            <option value="4">4 года</option>
+                            <option value="5">5 лет</option>
+                        </select>
+                    </div>
+                    <div>
+                        <span>
+                            Пополнение вклада
+                        </span>
+                        <input type="radio" name="receiving" id="receiving0" value='no' checked>
+                        <label for="receiving0">Нет</label>
+                        <input type="radio" name="receiving" id="receiving1" value='yes'>
+                        <label for="receiving1">Да</label>
+                    </div>
+                    <div>
+                        <span>
+                            Сумма пополнения вклада
+                        </span>
+                        <input type="number" name="replenishment" class="input"
+                        placeholder="10 000"  min="1000" max="3000000" id="replenishment">
+                        <!-- Ползунок2 -->
+                        <div class="slider" id="secondSlider">
+                            <a class="ui-slider-handle" href="#">
+                                <div id="slider-result2">1000 руб.</div>
+                            </a>
+                            <input id="znch" name="znch" type="hidden" />
+                        </div>
+                        <!-- Ползунок2 -->
+                    </div>
+                    <div>
+                        <input type="submit" value="Рассчитать" id="submit">
+                        <span>
+                            <b>
+                                Результат:
+                            </b>
+                        </span>
+                        <span id='payment'></span>
+                    </div>
+            </div>
+        </form>
+    </div>
+
+
+    <footer id="footer">
+        <div></div>
+        <div>
+            <a href="#">
+                Кредитные карты
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                Вклады
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                Дебетовые карты
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                Страхование
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                Друзья
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                Интернет-банк
+            </a>
+        </div>
+    </footer>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+
+    <!--Ползунок-->
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <!--Ползунок-->
+
+    <!--Календарь-->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--Календарь-->
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
